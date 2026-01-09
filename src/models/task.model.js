@@ -66,7 +66,6 @@ class Task {
 		let idList = id.split(",").filter((item) => item > 0);
 		if (idList.length === 0) return 0;
 		idList = `(${idList.join(",")})`;
-		console.log("DELETE FROM tasks WHERE id IN " + idList);
 		const [deleteResult] = await this.db.execute(
 			"DELETE FROM `tasks` WHERE `id` IN " + idList
 		);
